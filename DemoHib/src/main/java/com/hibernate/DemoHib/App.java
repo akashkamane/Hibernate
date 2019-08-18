@@ -15,22 +15,24 @@ public class App
     
         Student Stud=new Student();
        
-        Stud.setId(407);
-        Stud.setName("sShona");	
-        Stud.setSirname("Rramm");
+        Stud.setId(1111);
+        Stud.setName("Akassss");	
+        Stud.setSirname("Kassssma");
         
-        
-        Configuration con=new Configuration().configure().addAnnotatedClass(Student.class);
-        
-        SessionFactory sf = con.buildSessionFactory();
-        
-        Session session= sf.openSession();
-        
-        Transaction tx = session.beginTransaction();
-        
-        session.save(Stud);
-        
-         tx.commit();
+       Configuration con=new Configuration().configure().addAnnotatedClass(Student.class);
+       
+       //ServiceRegistry reg=new ServiceRegistryBuilder().applySettings(con.getProperties()).buildServiceRegistry();
+       
+       SessionFactory sf=con.buildSessionFactory();
+       Session session=sf.openSession();
+       
+       Transaction tx=session.beginTransaction();
+       
+       session.save(Stud);
+       
+       tx.commit();
+       
+       
     }
     
 }

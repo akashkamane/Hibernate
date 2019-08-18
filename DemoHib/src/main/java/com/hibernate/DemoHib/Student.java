@@ -1,14 +1,20 @@
 package com.hibernate.DemoHib;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity
+import org.hibernate.annotations.Table;
+
+@Entity(name = "aaKASH")
+
 public class Student 
 {	@Id
 	private int id;
 	private String name;
+	@Column(name="Adnav")
 	private String sirname;
+	//private long Image;
 	
 	public int getId() {
 		return id;
@@ -29,6 +35,9 @@ public class Student
 		this.sirname = sirname;
 	}
 
-	
+	/*
+	 * public long getImage() { return Image; } public void setImage(long Image) {
+	 * this.Image = Image; }
+	 */
 
 }
