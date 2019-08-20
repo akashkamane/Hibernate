@@ -3,11 +3,11 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 19-Aug-2019, 12:14:40 AM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.hibernate.XML.Employee" table="EMPLOYEE">
+    <class name="com.simple.maven.HibernateXml.Employee" table="EMPLOYEE">
         <id name="id" type="int">
             <column name="ID" />
-            <!--  <generator class="assigned" /> -->
-           <generator class="native" />
+           <!--  <generator class="assigned" /> -->
+            <generator class="native" />
         </id>
         <property name="firstName" type="java.lang.String">
             <column name="FIRST_NAME" />
@@ -18,16 +18,5 @@
         <property name="salary" type="int">
             <column name="SALARY" />
         </property>
-        <set name="certificate" cascade="all" lazy="false" inverse="false">
-   <key column="certificate_id"/>
-   <one-to-many class="com.hibernate.XML.MCertificate"/>
-	</set>
-   </class>
-   <class name="com.hibernate.XML.MCertificate" table="CERTIFICATE">
-   <id name="id" column="id">
-   <generator class="native"/>
-   </id>
-   <property name="name" column="name"/>
-   <many-to-one name="employee" column="certificate_id" cascade="all" class="com.hibernate.XML.Employee" />
     </class>
 </hibernate-mapping>
